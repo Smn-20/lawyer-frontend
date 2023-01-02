@@ -1,11 +1,33 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import './Menu.css'
 import { connect } from 'react-redux';
 import profile from '../../images/user.png'
 import { Outlet } from 'react-router-dom'
 import { logout } from '../../store/actions/auth'; 
 import { Link } from 'react-router-dom';
+import axios from 'axios'
+
 const Menu = (props) => {
+
+  const [user,setUser]=useState([])
+   
+  const fetch_data = () => {
+   let my_token = localStorage.getItem('token');
+   const config = {
+     headers: { 'Authorization': `Token ${my_token}` }
+ };     
+
+   axios.get('http://localhost:8000/rest-auth/user/',config).then(response => {
+     console.log(response.data)
+     setUser(response.data);
+   
+   });
+ }
+
+ useEffect(() => {
+   fetch_data();
+ }, [])
+
 
   const handleLogout = () => {
     props.logout()
@@ -108,7 +130,7 @@ const Menu = (props) => {
       <img src={profile} style={{width:40,height:40,borderRadius:20}}/>
       </div>
       <div className='col-md-2'>
-        <p style={{marginLeft:10,fontWeight:'bold',fontSize:14}}>Brian KAMANZI</p>
+        <p style={{marginLeft:10,fontWeight:'bold',fontSize:14}}>{user.email} KAMANZI</p>
         <p style={{marginLeft:10,fontSize:12,marginTop:0,color:'grey'}}>Emizi Firm Administrator</p>
       </div>
       <div className='col-md-4' style={{marginLeft:30,marginRight:30,height:30,textAlign:'center',paddingTop:3,width:30,borderRadius:15,marginTop:5}}>

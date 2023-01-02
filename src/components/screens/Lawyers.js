@@ -36,6 +36,7 @@ export const Lawyers = () => {
              <th>Name</th>
              <th>Email</th>
              <th>Phone number</th>
+             <th>Firm</th>
              <th>Address</th>
           </tr>
        </thead>
@@ -48,6 +49,7 @@ export const Lawyers = () => {
              <td>{lawyer.name}</td>
              <td>{lawyer.user}</td>
              <td>{lawyer.phone}</td>
+             <td>{lawyer.firm.name}</td>
              <td>{lawyer.address}</td>
             
          

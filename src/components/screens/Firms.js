@@ -12,8 +12,7 @@ export const Firms = () => {
       headers: { Authorization: `Bearer ${my_token}` }
   };     
 
-    axios.get('http://localhost:8000/lawyers/',
-    config).then(response => {
+    axios.get('http://localhost:8000/firms/').then(response => {
       console.log(response.data)
       setFirms(response.data);
     

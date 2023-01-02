@@ -40,7 +40,7 @@ const Login = ({authLogin,isAuthenticated,role}) => {
                 <input type="text" onChange={e => onChange(e)} name="email" id="username" className="form-control"  required />
                 Password<label class="control-label"/>
                 <input type="password" onChange={e => onChange(e)} name="password" id="password" className="form-control" required/><br/>
-                <button class="btn btn-primary" style={{background:'#FCC344',border:'none',justifycontent:'center',width:292,position:'absolute',height:'45px',}}>CONTINUE</button>
+                <button class="btn btn-primary" style={{background:'#FCC344',border:'none',justifycontent:'center',width:330,position:'absolute',height:'45px',}}>CONTINUE</button>
 
 </form>
 <br/>
