@@ -14,6 +14,7 @@ import Register from './components/auth/Register';
 import { MyCases } from './components/screens/MyCases';
 import { Cases } from './components/screens/Cases';
 import { Clients } from './components/screens/Clients';
+import AddCase from './components/screens/AddCase';
 class App extends React.Component {
 
   componentDidMount() {
@@ -41,6 +42,7 @@ class App extends React.Component {
           <Route path='add_firm' element={<AddFirm/>}/>
           <Route path='my_cases' element={<MyCases/>}/>
           <Route path='cases' element={<Cases/>}/>
+          <Route path='add_case' element={<AddCase/>}/>
           <Route path='firms' element={<Firms/>}/>
         </Route> 
 
